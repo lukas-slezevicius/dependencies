@@ -22,6 +22,15 @@ alias(
 )
 
 alias(
+    name = "axum",
+    actual = "@raze__axum__0_5_13//:axum",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
     name = "cxx",
     actual = "@raze__cxx__1_0_73//:cxx",
     tags = [
@@ -167,7 +176,43 @@ alias(
 
 alias(
     name = "tokio",
-    actual = "@raze__tokio__0_2_25//:tokio",
+    actual = "@raze__tokio__1_20_1//:tokio",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "tower",
+    actual = "@raze__tower__0_4_13//:tower",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "tower_http",
+    actual = "@raze__tower_http__0_3_4//:tower_http",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "tracing",
+    actual = "@raze__tracing__0_1_36//:tracing",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "tracing_subscriber",
+    actual = "@raze__tracing_subscriber__0_3_15//:tracing_subscriber",
     tags = [
         "cargo-raze",
         "manual",
@@ -185,8 +230,18 @@ alias(
 
 # Export file for Stardoc support
 exports_files(
-    [
-        "crates.bzl",
-    ],
+    glob([
+        "**/*.bazel",
+        "**/*.bzl",
+    ]),
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "srcs",
+    srcs = glob([
+        "**/*.bazel",
+        "**/*.bzl",
+    ]),
     visibility = ["//visibility:public"],
 )

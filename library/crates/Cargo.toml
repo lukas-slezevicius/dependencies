@@ -10,8 +10,13 @@ antlr-rust = "0.2.0"
 cxx = "1.0.59"
 futures = { version = "0.3.21", features = ["executor", "thread-pool"] }
 rocksdb = "0.17.0"
-tokio = { version = "0.2.25", features = ["macros", "sync"] } # tokio 0.2.25 is used by grpc
+tokio = { version = "1.20.1", features = ["full"] }
 uuid = { version = "0.8.2", features = ["v4"] }
+axum = { version = "0.5.13", features = ["ws"] }
+tower = "0.4.13"
+tower-http = { version = "0.3.4", features = ["trace"]}
+tracing = "0.1.35"
+tracing-subscriber = "0.3.15"
 
 # gRPC dependencies - TODO: clean up
 protobuf = { version = "2.18.2", features = ["with-bytes"] }
