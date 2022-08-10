@@ -26,18 +26,19 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # MIT from expression "MIT OR Apache-2.0"
+    "notice",  # MIT from expression "MIT"
 ])
 
 # Generated Targets
 
 rust_library(
-    name = "futures_sink",
+    name = "tracing_futures",
     srcs = glob(["**/*.rs"]),
     crate_features = [
-        "alloc",
         "default",
+        "pin-project",
         "std",
+        "std-future",
     ],
     crate_root = "src/lib.rs",
     data = [],
@@ -47,11 +48,17 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=futures-sink",
+        "crate-name=tracing-futures",
         "manual",
     ],
-    version = "0.3.21",
+    version = "0.2.5",
     # buildifier: leave-alone
     deps = [
+        "@raze__pin_project__1_0_11//:pin_project",
+        "@raze__tracing__0_1_36//:tracing",
     ],
 )
+
+# Unsupported target "std_future" with type "test" omitted
+
+# Unsupported target "support" with type "test" omitted

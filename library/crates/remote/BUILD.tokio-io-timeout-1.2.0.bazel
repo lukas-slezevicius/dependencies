@@ -32,13 +32,8 @@ licenses([
 # Generated Targets
 
 rust_library(
-    name = "futures_sink",
+    name = "tokio_io_timeout",
     srcs = glob(["**/*.rs"]),
-    crate_features = [
-        "alloc",
-        "default",
-        "std",
-    ],
     crate_root = "src/lib.rs",
     data = [],
     edition = "2018",
@@ -47,11 +42,13 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=futures-sink",
+        "crate-name=tokio-io-timeout",
         "manual",
     ],
-    version = "0.3.21",
+    version = "1.2.0",
     # buildifier: leave-alone
     deps = [
+        "@raze__pin_project_lite__0_2_9//:pin_project_lite",
+        "@raze__tokio__1_20_1//:tokio",
     ],
 )

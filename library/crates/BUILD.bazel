@@ -184,6 +184,15 @@ alias(
 )
 
 alias(
+    name = "tonic",
+    actual = "@raze__tonic__0_8_0//:tonic",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
     name = "tower",
     actual = "@raze__tower__0_4_13//:tower",
     tags = [

@@ -31,27 +31,37 @@ licenses([
 
 # Generated Targets
 
+# Unsupported target "bench" with type "bench" omitted
+
+# Unsupported target "insert_unique_unchecked" with type "bench" omitted
+
 rust_library(
-    name = "futures_sink",
+    name = "hashbrown",
     srcs = glob(["**/*.rs"]),
     crate_features = [
-        "alloc",
-        "default",
-        "std",
+        "raw",
     ],
     crate_root = "src/lib.rs",
     data = [],
-    edition = "2018",
+    edition = "2021",
     rustc_flags = [
         "--cap-lints=allow",
     ],
     tags = [
         "cargo-raze",
-        "crate-name=futures-sink",
+        "crate-name=hashbrown",
         "manual",
     ],
-    version = "0.3.21",
+    version = "0.12.3",
     # buildifier: leave-alone
     deps = [
     ],
 )
+
+# Unsupported target "hasher" with type "test" omitted
+
+# Unsupported target "rayon" with type "test" omitted
+
+# Unsupported target "serde" with type "test" omitted
+
+# Unsupported target "set" with type "test" omitted

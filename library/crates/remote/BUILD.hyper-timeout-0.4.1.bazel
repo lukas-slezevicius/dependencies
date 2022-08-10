@@ -31,14 +31,11 @@ licenses([
 
 # Generated Targets
 
+# Unsupported target "client" with type "example" omitted
+
 rust_library(
-    name = "futures_sink",
+    name = "hyper_timeout",
     srcs = glob(["**/*.rs"]),
-    crate_features = [
-        "alloc",
-        "default",
-        "std",
-    ],
     crate_root = "src/lib.rs",
     data = [],
     edition = "2018",
@@ -47,11 +44,15 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=futures-sink",
+        "crate-name=hyper-timeout",
         "manual",
     ],
-    version = "0.3.21",
+    version = "0.4.1",
     # buildifier: leave-alone
     deps = [
+        "@raze__hyper__0_14_20//:hyper",
+        "@raze__pin_project_lite__0_2_9//:pin_project_lite",
+        "@raze__tokio__1_20_1//:tokio",
+        "@raze__tokio_io_timeout__1_2_0//:tokio_io_timeout",
     ],
 )

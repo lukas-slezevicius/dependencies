@@ -26,32 +26,39 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # MIT from expression "MIT OR Apache-2.0"
+    "notice",  # MIT from expression "MIT"
 ])
 
 # Generated Targets
 
+# Unsupported target "tcp_accept" with type "example" omitted
+
 rust_library(
-    name = "futures_sink",
+    name = "async_stream",
     srcs = glob(["**/*.rs"]),
-    crate_features = [
-        "alloc",
-        "default",
-        "std",
-    ],
     crate_root = "src/lib.rs",
     data = [],
     edition = "2018",
+    proc_macro_deps = [
+        "@raze__async_stream_impl__0_3_3//:async_stream_impl",
+    ],
     rustc_flags = [
         "--cap-lints=allow",
     ],
     tags = [
         "cargo-raze",
-        "crate-name=futures-sink",
+        "crate-name=async-stream",
         "manual",
     ],
-    version = "0.3.21",
+    version = "0.3.3",
     # buildifier: leave-alone
     deps = [
+        "@raze__futures_core__0_3_21//:futures_core",
     ],
 )
+
+# Unsupported target "for_await" with type "test" omitted
+
+# Unsupported target "stream" with type "test" omitted
+
+# Unsupported target "try_stream" with type "test" omitted
