@@ -73,3 +73,6 @@ extra_aliased_targets = ["cargo_bin_protoc_gen_rust"]
 
 [package.metadata.raze.crates.grpc-compiler.'0.8.3']
 extra_aliased_targets = ["cargo_bin_protoc_gen_rust_grpc"]
+
+[package.metadata.raze.crates.axum.'0.5.13']
+compile_data_attr = "glob([\"**/*.md\"])"

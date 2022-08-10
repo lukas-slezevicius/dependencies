@@ -25,7 +25,7 @@ workspace(name = "vaticle_dependencies")
 load("//builder/rust:deps.bzl", rust_deps = "deps")
 rust_deps()
 load("@rules_rust//rust:repositories.bzl", "rust_repositories")
-rust_repositories(version = "nightly", iso_date = "2021-07-01", edition="2018")
+rust_repositories(edition="2021")
 
 # Load //builder/python
 load("//builder/python:deps.bzl", python_deps = "deps")
