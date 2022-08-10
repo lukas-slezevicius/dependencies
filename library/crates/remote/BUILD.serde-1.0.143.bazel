@@ -56,7 +56,7 @@ cargo_build_script(
         "cargo-raze",
         "manual",
     ],
-    version = "1.0.142",
+    version = "1.0.143",
     visibility = ["//visibility:private"],
     deps = [
     ],
@@ -80,7 +80,7 @@ rust_library(
         "crate-name=serde",
         "manual",
     ],
-    version = "1.0.142",
+    version = "1.0.143",
     # buildifier: leave-alone
     deps = [
         ":serde_build_script",

@@ -50,11 +50,11 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
-        name = "raze__axum__0_5_13",
-        url = "https://crates.io/api/v1/crates/axum/0.5.13/download",
+        name = "raze__axum__0_5_15",
+        url = "https://crates.io/api/v1/crates/axum/0.5.15/download",
         type = "tar.gz",
-        strip_prefix = "axum-0.5.13",
-        build_file = Label("//library/crates/remote:BUILD.axum-0.5.13.bazel"),
+        strip_prefix = "axum-0.5.15",
+        build_file = Label("//library/crates/remote:BUILD.axum-0.5.15.bazel"),
     )
 
     maybe(
@@ -653,11 +653,11 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
-        name = "raze__libc__0_2_127",
-        url = "https://crates.io/api/v1/crates/libc/0.2.127/download",
+        name = "raze__libc__0_2_129",
+        url = "https://crates.io/api/v1/crates/libc/0.2.129/download",
         type = "tar.gz",
-        strip_prefix = "libc-0.2.127",
-        build_file = Label("//library/crates/remote:BUILD.libc-0.2.127.bazel"),
+        strip_prefix = "libc-0.2.129",
+        build_file = Label("//library/crates/remote:BUILD.libc-0.2.129.bazel"),
     )
 
     maybe(
@@ -1172,11 +1172,11 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
-        name = "raze__serde__1_0_142",
-        url = "https://crates.io/api/v1/crates/serde/1.0.142/download",
+        name = "raze__serde__1_0_143",
+        url = "https://crates.io/api/v1/crates/serde/1.0.143/download",
         type = "tar.gz",
-        strip_prefix = "serde-1.0.142",
-        build_file = Label("//library/crates/remote:BUILD.serde-1.0.142.bazel"),
+        strip_prefix = "serde-1.0.143",
+        build_file = Label("//library/crates/remote:BUILD.serde-1.0.143.bazel"),
     )
 
     maybe(

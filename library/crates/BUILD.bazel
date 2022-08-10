@@ -23,7 +23,7 @@ alias(
 
 alias(
     name = "axum",
-    actual = "@raze__axum__0_5_13//:axum",
+    actual = "@raze__axum__0_5_15//:axum",
     tags = [
         "cargo-raze",
         "manual",
