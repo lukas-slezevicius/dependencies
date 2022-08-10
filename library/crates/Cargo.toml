@@ -77,3 +77,6 @@ extra_aliased_targets = ["cargo_bin_protoc_gen_rust_grpc"]
 
 [package.metadata.raze.crates.axum.'0.5.13']
 compile_data_attr = "glob([\"**/*.md\"])"
+
+[package.metadata.raze.crates.tonic.'0.8.0']
+compile_data_attr = "glob([\"**/*.md\"])"
