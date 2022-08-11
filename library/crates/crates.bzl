@@ -32,11 +32,11 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
-        name = "raze__anyhow__1_0_60",
-        url = "https://crates.io/api/v1/crates/anyhow/1.0.60/download",
+        name = "raze__anyhow__1_0_61",
+        url = "https://crates.io/api/v1/crates/anyhow/1.0.61/download",
         type = "tar.gz",
-        strip_prefix = "anyhow-1.0.60",
-        build_file = Label("//library/crates/remote:BUILD.anyhow-1.0.60.bazel"),
+        strip_prefix = "anyhow-1.0.61",
+        build_file = Label("//library/crates/remote:BUILD.anyhow-1.0.61.bazel"),
     )
 
     maybe(
