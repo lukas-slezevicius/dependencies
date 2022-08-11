@@ -112,6 +112,15 @@ alias(
 )
 
 alias(
+    name = "prost",
+    actual = "@raze__prost__0_11_0//:prost",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
     name = "protobuf",
     actual = "@raze__protobuf__2_18_2//:protobuf",
     tags = [
