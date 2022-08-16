@@ -59,7 +59,7 @@ alias(
 
 alias(
     name = "futures",
-    actual = "@raze__futures__0_3_21//:futures",
+    actual = "@raze__futures__0_3_23//:futures",
     tags = [
         "cargo-raze",
         "manual",
@@ -96,6 +96,24 @@ alias(
 alias(
     name = "grpc_protobuf",
     actual = "@raze__grpc_protobuf__0_8_3//:grpc_protobuf",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "k8s_openapi",
+    actual = "@raze__k8s_openapi__0_15_0//:k8s_openapi",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "kube",
+    actual = "@raze__kube__0_74_0//:kube",
     tags = [
         "cargo-raze",
         "manual",

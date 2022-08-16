@@ -51,7 +51,7 @@ rust_library(
     # buildifier: leave-alone
     deps = [
         "@raze__either__1_7_0//:either",
-        "@raze__libc__0_2_129//:libc",
+        "@raze__libc__0_2_132//:libc",
     ] + selects.with_or({
         (
             "@rules_rust//rust/platform:x86_64-pc-windows-msvc",
