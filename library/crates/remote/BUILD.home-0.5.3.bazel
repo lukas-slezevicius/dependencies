@@ -31,29 +31,11 @@ licenses([
 
 # Generated Targets
 
-# Unsupported target "chrono" with type "bench" omitted
-
-# Unsupported target "serde" with type "bench" omitted
-
 rust_library(
-    name = "chrono",
+    name = "home",
     srcs = glob(["**/*.rs"]),
     aliases = {
     },
-    crate_features = [
-        "alloc",
-        "clock",
-        "default",
-        "iana-time-zone",
-        "js-sys",
-        "oldtime",
-        "serde",
-        "std",
-        "time",
-        "wasm-bindgen",
-        "wasmbind",
-        "winapi",
-    ],
     crate_root = "src/lib.rs",
     data = [],
     edition = "2018",
@@ -62,17 +44,12 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=chrono",
+        "crate-name=home",
         "manual",
     ],
-    version = "0.4.22",
+    version = "0.5.3",
     # buildifier: leave-alone
     deps = [
-        "@raze__iana_time_zone__0_1_46//:iana_time_zone",
-        "@raze__num_integer__0_1_45//:num_integer",
-        "@raze__num_traits__0_2_15//:num_traits",
-        "@raze__serde__1_0_143//:serde",
-        "@raze__time__0_1_44//:time",
     ] + selects.with_or({
         (
             "@rules_rust//rust/platform:x86_64-pc-windows-msvc",
@@ -82,5 +59,3 @@ rust_library(
         "//conditions:default": [],
     }),
 )
-
-# Unsupported target "wasm" with type "test" omitted

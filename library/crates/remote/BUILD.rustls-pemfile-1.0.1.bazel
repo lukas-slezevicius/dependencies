@@ -26,31 +26,16 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # MIT from expression "MIT OR Apache-2.0"
+    "notice",  # Apache-2.0 from expression "Apache-2.0 OR (ISC OR MIT)"
 ])
 
 # Generated Targets
 
-# Unsupported target "mod" with type "bench" omitted
-
-alias(
-    name = "sha_1",
-    actual = ":sha1",
-    tags = [
-        "cargo-raze",
-        "manual",
-    ],
-)
+# Unsupported target "benchmark" with type "bench" omitted
 
 rust_library(
-    name = "sha1",
+    name = "rustls_pemfile",
     srcs = glob(["**/*.rs"]),
-    aliases = {
-    },
-    crate_features = [
-        "default",
-        "std",
-    ],
     crate_root = "src/lib.rs",
     data = [],
     edition = "2018",
@@ -59,24 +44,14 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=sha1",
+        "crate-name=rustls-pemfile",
         "manual",
     ],
-    version = "0.10.0",
+    version = "1.0.1",
     # buildifier: leave-alone
     deps = [
-        "@raze__cfg_if__1_0_0//:cfg_if",
-        "@raze__digest__0_10_3//:digest",
-    ] + selects.with_or({
-        (
-            "@rules_rust//rust/platform:x86_64-apple-darwin",
-            "@rules_rust//rust/platform:x86_64-pc-windows-msvc",
-            "@rules_rust//rust/platform:x86_64-unknown-linux-gnu",
-        ): [
-            "@raze__cpufeatures__0_2_3//:cpufeatures",
-        ],
-        "//conditions:default": [],
-    }),
+        "@raze__base64__0_13_0//:base64",
+    ],
 )
 
-# Unsupported target "mod" with type "test" omitted
+# Unsupported target "integration" with type "test" omitted

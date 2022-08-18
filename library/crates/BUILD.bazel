@@ -67,6 +67,15 @@ alias(
 )
 
 alias(
+    name = "google_cloud_pubsub",
+    actual = "@raze__google_cloud_pubsub__0_5_0//:google_cloud_pubsub",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
     name = "grpc",
     actual = "@raze__grpc__0_8_3//:grpc",
     tags = [
@@ -184,6 +193,15 @@ alias(
 )
 
 alias(
+    name = "ring",
+    actual = "@raze__ring__0_16_20//:ring",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
     name = "rocksdb",
     actual = "@raze__rocksdb__0_17_0//:rocksdb",
     tags = [
@@ -285,6 +303,15 @@ alias(
 alias(
     name = "uuid",
     actual = "@raze__uuid__0_8_2//:uuid",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "webpki",
+    actual = "@raze__webpki__0_22_0//:webpki",
     tags = [
         "cargo-raze",
         "manual",

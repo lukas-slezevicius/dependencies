@@ -26,57 +26,44 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # MIT from expression "MIT OR Apache-2.0"
+    "notice",  # MIT from expression "MIT"
 ])
 
 # Generated Targets
 
-# Unsupported target "mod" with type "bench" omitted
-
-alias(
-    name = "sha_1",
-    actual = ":sha1",
-    tags = [
-        "cargo-raze",
-        "manual",
-    ],
-)
-
 rust_library(
-    name = "sha1",
+    name = "google_cloud_pubsub",
     srcs = glob(["**/*.rs"]),
-    aliases = {
-    },
     crate_features = [
         "default",
-        "std",
+        "default-tls",
     ],
     crate_root = "src/lib.rs",
     data = [],
-    edition = "2018",
+    edition = "2021",
+    proc_macro_deps = [
+        "@raze__async_trait__0_1_57//:async_trait",
+    ],
     rustc_flags = [
         "--cap-lints=allow",
     ],
     tags = [
         "cargo-raze",
-        "crate-name=sha1",
+        "crate-name=google-cloud-pubsub",
         "manual",
     ],
-    version = "0.10.0",
+    version = "0.5.0",
     # buildifier: leave-alone
     deps = [
-        "@raze__cfg_if__1_0_0//:cfg_if",
-        "@raze__digest__0_10_3//:digest",
-    ] + selects.with_or({
-        (
-            "@rules_rust//rust/platform:x86_64-apple-darwin",
-            "@rules_rust//rust/platform:x86_64-pc-windows-msvc",
-            "@rules_rust//rust/platform:x86_64-unknown-linux-gnu",
-        ): [
-            "@raze__cpufeatures__0_2_3//:cpufeatures",
-        ],
-        "//conditions:default": [],
-    }),
+        "@raze__async_channel__1_7_1//:async_channel",
+        "@raze__async_stream__0_3_3//:async_stream",
+        "@raze__google_cloud_auth__0_4_0//:google_cloud_auth",
+        "@raze__google_cloud_gax__0_8_0//:google_cloud_gax",
+        "@raze__google_cloud_googleapis__0_5_0//:google_cloud_googleapis",
+        "@raze__parking_lot__0_12_1//:parking_lot",
+        "@raze__prost_types__0_10_1//:prost_types",
+        "@raze__thiserror__1_0_32//:thiserror",
+        "@raze__tokio__1_20_1//:tokio",
+        "@raze__tracing__0_1_36//:tracing",
+    ],
 )
-
-# Unsupported target "mod" with type "test" omitted

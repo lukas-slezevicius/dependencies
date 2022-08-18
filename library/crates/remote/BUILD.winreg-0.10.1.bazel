@@ -26,7 +26,7 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # MIT from expression "MIT OR Apache-2.0"
+    "notice",  # MIT from expression "MIT"
 ])
 
 # Generated Targets
@@ -38,13 +38,10 @@ load(
 )
 
 cargo_build_script(
-    name = "num_integer_build_script",
+    name = "winreg_build_script",
     srcs = glob(["**/*.rs"]),
     build_script_env = {
     },
-    crate_features = [
-        "std",
-    ],
     crate_root = "build.rs",
     data = glob(["**"]),
     edition = "2015",
@@ -55,25 +52,29 @@ cargo_build_script(
         "cargo-raze",
         "manual",
     ],
-    version = "0.1.45",
+    version = "0.10.1",
     visibility = ["//visibility:private"],
     deps = [
-        "@raze__autocfg__1_1_0//:autocfg",
     ],
 )
 
-# Unsupported target "average" with type "bench" omitted
+# Unsupported target "basic_usage" with type "example" omitted
 
-# Unsupported target "gcd" with type "bench" omitted
+# Unsupported target "enum" with type "example" omitted
 
-# Unsupported target "roots" with type "bench" omitted
+# Unsupported target "installed_apps" with type "example" omitted
+
+# Unsupported target "load_app_key" with type "example" omitted
+
+# Unsupported target "map_key_serialization" with type "example" omitted
+
+# Unsupported target "serialization" with type "example" omitted
+
+# Unsupported target "transactions" with type "example" omitted
 
 rust_library(
-    name = "num_integer",
+    name = "winreg",
     srcs = glob(["**/*.rs"]),
-    crate_features = [
-        "std",
-    ],
     crate_root = "src/lib.rs",
     data = [],
     edition = "2015",
@@ -82,17 +83,15 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=num-integer",
+        "crate-name=winreg",
         "manual",
     ],
-    version = "0.1.45",
+    version = "0.10.1",
     # buildifier: leave-alone
     deps = [
-        ":num_integer_build_script",
-        "@raze__num_traits__0_2_15//:num_traits",
+        ":winreg_build_script",
+        "@raze__winapi__0_3_9//:winapi",
     ],
 )
 
-# Unsupported target "average" with type "test" omitted
-
-# Unsupported target "roots" with type "test" omitted
+# Unsupported target "reg_key" with type "test" omitted

@@ -30,46 +30,12 @@ licenses([
 ])
 
 # Generated Targets
-# buildifier: disable=out-of-order-load
-# buildifier: disable=load-on-top
-load(
-    "@rules_rust//cargo:cargo_build_script.bzl",
-    "cargo_build_script",
-)
 
-cargo_build_script(
-    name = "num_traits_build_script",
-    srcs = glob(["**/*.rs"]),
-    build_script_env = {
-    },
-    crate_features = [
-        "default",
-        "std",
-    ],
-    crate_root = "build.rs",
-    data = glob(["**"]),
-    edition = "2015",
-    rustc_flags = [
-        "--cap-lints=allow",
-    ],
-    tags = [
-        "cargo-raze",
-        "manual",
-    ],
-    version = "0.2.15",
-    visibility = ["//visibility:private"],
-    deps = [
-        "@raze__autocfg__1_1_0//:autocfg",
-    ],
-)
+# Unsupported target "probe" with type "example" omitted
 
 rust_library(
-    name = "num_traits",
+    name = "openssl_probe",
     srcs = glob(["**/*.rs"]),
-    crate_features = [
-        "default",
-        "std",
-    ],
     crate_root = "src/lib.rs",
     data = [],
     edition = "2015",
@@ -78,14 +44,11 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=num-traits",
+        "crate-name=openssl-probe",
         "manual",
     ],
-    version = "0.2.15",
+    version = "0.1.5",
     # buildifier: leave-alone
     deps = [
-        ":num_traits_build_script",
     ],
 )
-
-# Unsupported target "cast" with type "test" omitted

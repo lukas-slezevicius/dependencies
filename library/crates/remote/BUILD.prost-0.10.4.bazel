@@ -26,66 +26,38 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # MIT from expression "MIT OR Apache-2.0"
+    "notice",  # Apache-2.0 from expression "Apache-2.0"
 ])
 
 # Generated Targets
-# buildifier: disable=out-of-order-load
-# buildifier: disable=load-on-top
-load(
-    "@rules_rust//cargo:cargo_build_script.bzl",
-    "cargo_build_script",
-)
 
-cargo_build_script(
-    name = "num_traits_build_script",
-    srcs = glob(["**/*.rs"]),
-    build_script_env = {
-    },
-    crate_features = [
-        "default",
-        "std",
-    ],
-    crate_root = "build.rs",
-    data = glob(["**"]),
-    edition = "2015",
-    rustc_flags = [
-        "--cap-lints=allow",
-    ],
-    tags = [
-        "cargo-raze",
-        "manual",
-    ],
-    version = "0.2.15",
-    visibility = ["//visibility:private"],
-    deps = [
-        "@raze__autocfg__1_1_0//:autocfg",
-    ],
-)
+# Unsupported target "varint" with type "bench" omitted
 
 rust_library(
-    name = "num_traits",
+    name = "prost",
     srcs = glob(["**/*.rs"]),
     crate_features = [
         "default",
+        "prost-derive",
         "std",
     ],
     crate_root = "src/lib.rs",
     data = [],
-    edition = "2015",
+    edition = "2018",
+    proc_macro_deps = [
+        "@raze__prost_derive__0_10_1//:prost_derive",
+    ],
     rustc_flags = [
         "--cap-lints=allow",
     ],
     tags = [
         "cargo-raze",
-        "crate-name=num-traits",
+        "crate-name=prost",
         "manual",
     ],
-    version = "0.2.15",
+    version = "0.10.4",
     # buildifier: leave-alone
     deps = [
-        ":num_traits_build_script",
+        "@raze__bytes__1_2_1//:bytes",
     ],
 )
-
-# Unsupported target "cast" with type "test" omitted

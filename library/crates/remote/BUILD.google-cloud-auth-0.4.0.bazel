@@ -26,61 +26,49 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # MIT from expression "MIT OR Apache-2.0"
+    "notice",  # MIT from expression "MIT"
 ])
 
 # Generated Targets
 
-# Unsupported target "chrono" with type "bench" omitted
-
-# Unsupported target "serde" with type "bench" omitted
-
 rust_library(
-    name = "chrono",
+    name = "google_cloud_auth",
     srcs = glob(["**/*.rs"]),
     aliases = {
+        "@raze__jsonwebtoken__7_2_0//:jsonwebtoken": "jwt",
+        "@raze__serde_json__1_0_83//:serde_json": "json",
     },
     crate_features = [
-        "alloc",
-        "clock",
-        "default",
-        "iana-time-zone",
-        "js-sys",
-        "oldtime",
-        "serde",
-        "std",
-        "time",
-        "wasm-bindgen",
-        "wasmbind",
-        "winapi",
+        "default-tls",
     ],
     crate_root = "src/lib.rs",
     data = [],
-    edition = "2018",
+    edition = "2021",
+    proc_macro_deps = [
+        "@raze__async_trait__0_1_57//:async_trait",
+    ],
     rustc_flags = [
         "--cap-lints=allow",
     ],
     tags = [
         "cargo-raze",
-        "crate-name=chrono",
+        "crate-name=google-cloud-auth",
         "manual",
     ],
-    version = "0.4.22",
+    version = "0.4.0",
     # buildifier: leave-alone
     deps = [
-        "@raze__iana_time_zone__0_1_46//:iana_time_zone",
-        "@raze__num_integer__0_1_45//:num_integer",
-        "@raze__num_traits__0_2_15//:num_traits",
+        "@raze__chrono__0_4_22//:chrono",
+        "@raze__google_cloud_metadata__0_3_0//:google_cloud_metadata",
+        "@raze__home__0_5_3//:home",
+        "@raze__jsonwebtoken__7_2_0//:jsonwebtoken",
+        "@raze__reqwest__0_11_11//:reqwest",
         "@raze__serde__1_0_143//:serde",
-        "@raze__time__0_1_44//:time",
-    ] + selects.with_or({
-        (
-            "@rules_rust//rust/platform:x86_64-pc-windows-msvc",
-        ): [
-            "@raze__winapi__0_3_9//:winapi",
-        ],
-        "//conditions:default": [],
-    }),
+        "@raze__serde_json__1_0_83//:serde_json",
+        "@raze__thiserror__1_0_32//:thiserror",
+        "@raze__tokio__1_20_1//:tokio",
+        "@raze__urlencoding__2_1_0//:urlencoding",
+    ],
 )
 
-# Unsupported target "wasm" with type "test" omitted
+# Unsupported target "create_token_source" with type "test" omitted
