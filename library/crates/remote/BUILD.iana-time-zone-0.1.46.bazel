@@ -31,11 +31,18 @@ licenses([
 
 # Generated Targets
 
-# Unsupported target "benches" with type "bench" omitted
+# Unsupported target "get_timezone" with type "example" omitted
+
+# Unsupported target "stress-test" with type "example" omitted
 
 rust_library(
-    name = "bumpalo",
+    name = "iana_time_zone",
     srcs = glob(["**/*.rs"]),
+    aliases = {
+    },
+    crate_features = [
+        "fallback",
+    ],
     crate_root = "src/lib.rs",
     data = [],
     edition = "2018",
@@ -44,13 +51,25 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=bumpalo",
+        "crate-name=iana-time-zone",
         "manual",
     ],
-    version = "3.10.0",
+    version = "0.1.46",
     # buildifier: leave-alone
     deps = [
-    ],
+    ] + selects.with_or({
+        (
+            "@rules_rust//rust/platform:x86_64-apple-darwin",
+        ): [
+            "@raze__core_foundation_sys__0_8_3//:core_foundation_sys",
+        ],
+        "//conditions:default": [],
+    }) + selects.with_or({
+        (
+            "@rules_rust//rust/platform:x86_64-pc-windows-msvc",
+        ): [
+            "@raze__winapi__0_3_9//:winapi",
+        ],
+        "//conditions:default": [],
+    }),
 )
-
-# Unsupported target "try_alloc" with type "test" omitted
