@@ -33,3 +33,8 @@ def deps():
         remote = "https://github.com/vaticle/rules_proto",
         commit = "fd3aa227fdaa178c077ef9d72156b772d3b8c05d",
     )
+    git_repository(
+        name = "com_google_protobuf",
+        remote = "https://github.com/protocolbuffers/protobuf",
+        commit = "ab840345966d0fa8e7100d771c92a73bfbadd25c",
+    )
