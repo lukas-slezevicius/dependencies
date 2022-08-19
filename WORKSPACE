@@ -91,6 +91,14 @@ maven(vaticle_dependencies_tool_maven_artifacts)
 load("//library/crates:crates.bzl", "raze_fetch_remote_crates")
 raze_fetch_remote_crates()
 
+# Load //builder/grpc
+load("//builder/grpc:deps.bzl", grpc_deps = "deps")
+grpc_deps()
+
+# Load protoc binary dependencies
+load("@com_google_protobuf//:protobuf_deps.bzl", "PROTOBUF_MAVEN_ARTIFACTS", "protobuf_deps")
+protobuf_deps()
+
 ###############################################
 # Create @vaticle_typedb_workspace_refs #
 ###############################################

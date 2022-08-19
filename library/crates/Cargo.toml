@@ -100,5 +100,5 @@ compile_data_attr = "glob([\"**/*.der\"])"
 compile_data_attr = "glob([\"**/*.der\"])"
 
 [package.metadata.raze.crates.prost-build.'0.10.4']
-compile_data_attr = "glob([\"*.proto\"]) + [\"@com_google_protobuf//:protoc\"]"
+build_data_dependencies = ["@com_google_protobuf//:protoc"]
 buildrs_additional_environment_variables = { PROTOC_NO_VENDOR =  "true", PROTOC =  "$(execpath @com_google_protobuf//:protoc)" }

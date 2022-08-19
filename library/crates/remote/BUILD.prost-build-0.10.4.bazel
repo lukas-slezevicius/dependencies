@@ -48,7 +48,9 @@ cargo_build_script(
         "default",
     ],
     crate_root = "build.rs",
-    data = glob(["**"]),
+    data = glob(["**"]) + [
+        "@com_google_protobuf//:protoc",
+    ],
     edition = "2018",
     rustc_flags = [
         "--cap-lints=allow",
@@ -74,7 +76,6 @@ rust_library(
     ],
     crate_root = "src/lib.rs",
     data = [],
-    compile_data = glob(["*.proto"]) + ["@com_google_protobuf//:protoc"],
     edition = "2018",
     rustc_flags = [
         "--cap-lints=allow",
