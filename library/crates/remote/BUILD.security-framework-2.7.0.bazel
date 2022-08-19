@@ -46,7 +46,7 @@ rust_library(
     ],
     crate_root = "src/lib.rs",
     data = [],
-    edition = "2018",
+    edition = "2021",
     rustc_flags = [
         "--cap-lints=allow",
     ],
@@ -55,7 +55,7 @@ rust_library(
         "crate-name=security-framework",
         "manual",
     ],
-    version = "2.6.1",
+    version = "2.7.0",
     # buildifier: leave-alone
     deps = [
         "@raze__bitflags__1_3_2//:bitflags",

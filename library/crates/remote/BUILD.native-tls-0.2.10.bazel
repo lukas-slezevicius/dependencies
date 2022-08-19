@@ -110,7 +110,7 @@ rust_library(
         ): [
             "@raze__lazy_static__1_4_0//:lazy_static",
             "@raze__libc__0_2_132//:libc",
-            "@raze__security_framework__2_6_1//:security_framework",
+            "@raze__security_framework__2_7_0//:security_framework",
             "@raze__security_framework_sys__2_6_1//:security_framework_sys",
             "@raze__tempfile__3_3_0//:tempfile",
         ],

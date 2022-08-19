@@ -41,6 +41,8 @@ cargo_build_script(
     name = "prost_build_build_script",
     srcs = glob(["**/*.rs"]),
     build_script_env = {
+        "PROTOC": "$(execpath @com_google_protobuf//:protoc)",
+        "PROTOC_NO_VENDOR": "true",
     },
     crate_features = [
         "default",
@@ -72,6 +74,7 @@ rust_library(
     ],
     crate_root = "src/lib.rs",
     data = [],
+    compile_data = glob(["*.proto"]) + ["@com_google_protobuf//:protoc"],
     edition = "2018",
     rustc_flags = [
         "--cap-lints=allow",

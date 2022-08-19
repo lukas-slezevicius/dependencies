@@ -1962,11 +1962,11 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
-        name = "raze__security_framework__2_6_1",
-        url = "https://crates.io/api/v1/crates/security-framework/2.6.1/download",
+        name = "raze__security_framework__2_7_0",
+        url = "https://crates.io/api/v1/crates/security-framework/2.7.0/download",
         type = "tar.gz",
-        strip_prefix = "security-framework-2.6.1",
-        build_file = Label("//library/crates/remote:BUILD.security-framework-2.6.1.bazel"),
+        strip_prefix = "security-framework-2.7.0",
+        build_file = Label("//library/crates/remote:BUILD.security-framework-2.7.0.bazel"),
     )
 
     maybe(
