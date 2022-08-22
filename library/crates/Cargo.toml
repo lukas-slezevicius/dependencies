@@ -27,6 +27,8 @@ rand = "0.8.4"
 google-cloud-pubsub = "0.5.0"
 ring = "0.16.20"
 webpki = "0.22.0"
+openssl = { version = "0.10", features = ["vendored"] }
+
 
 # gRPC dependencies - TODO: clean up
 protobuf = { version = "2.18.2", features = ["with-bytes"] }

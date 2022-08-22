@@ -110,8 +110,8 @@ rust_library(
     deps = [
         ":schemars_build_script",
         "@raze__dyn_clone__1_0_9//:dyn_clone",
-        "@raze__serde__1_0_143//:serde",
-        "@raze__serde_json__1_0_83//:serde_json",
+        "@raze__serde__1_0_144//:serde",
+        "@raze__serde_json__1_0_85//:serde_json",
     ],
 )
 
