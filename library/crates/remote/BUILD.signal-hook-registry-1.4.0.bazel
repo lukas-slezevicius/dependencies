@@ -26,29 +26,30 @@ package(default_visibility = [
 ])
 
 licenses([
-    "notice",  # MIT from expression "MIT OR Apache-2.0"
+    "notice",  # Apache-2.0 from expression "Apache-2.0 OR MIT"
 ])
 
 # Generated Targets
 
 rust_library(
-    name = "tokio_io_timeout",
+    name = "signal_hook_registry",
     srcs = glob(["**/*.rs"]),
     crate_root = "src/lib.rs",
     data = [],
-    edition = "2018",
+    edition = "2015",
     rustc_flags = [
         "--cap-lints=allow",
     ],
     tags = [
         "cargo-raze",
-        "crate-name=tokio-io-timeout",
+        "crate-name=signal-hook-registry",
         "manual",
     ],
-    version = "1.2.0",
+    version = "1.4.0",
     # buildifier: leave-alone
     deps = [
-        "@raze__pin_project_lite__0_2_9//:pin_project_lite",
-        "@raze__tokio__1_21_0//:tokio",
+        "@raze__libc__0_2_132//:libc",
     ],
 )
+
+# Unsupported target "unregister_signal" with type "test" omitted

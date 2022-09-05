@@ -45,6 +45,8 @@ cargo_build_script(
     crate_features = [
         "bytes",
         "default",
+        "fs",
+        "full",
         "io-std",
         "io-util",
         "libc",
@@ -52,9 +54,14 @@ cargo_build_script(
         "memchr",
         "mio",
         "net",
+        "num_cpus",
         "once_cell",
+        "parking_lot",
+        "process",
         "rt",
-        "socket2",
+        "rt-multi-thread",
+        "signal",
+        "signal-hook-registry",
         "sync",
         "time",
         "tokio-macros",
@@ -70,11 +77,19 @@ cargo_build_script(
         "cargo-raze",
         "manual",
     ],
-    version = "1.20.1",
+    version = "1.21.0",
     visibility = ["//visibility:private"],
     deps = [
         "@raze__autocfg__1_1_0//:autocfg",
     ] + selects.with_or({
+        (
+            "@rules_rust//rust/platform:x86_64-apple-darwin",
+            "@rules_rust//rust/platform:x86_64-pc-windows-msvc",
+            "@rules_rust//rust/platform:x86_64-unknown-linux-gnu",
+        ): [
+        ],
+        "//conditions:default": [],
+    }) + selects.with_or({
         (
             "@rules_rust//rust/platform:x86_64-apple-darwin",
             "@rules_rust//rust/platform:x86_64-unknown-linux-gnu",
@@ -98,6 +113,8 @@ rust_library(
     crate_features = [
         "bytes",
         "default",
+        "fs",
+        "full",
         "io-std",
         "io-util",
         "libc",
@@ -105,9 +122,14 @@ rust_library(
         "memchr",
         "mio",
         "net",
+        "num_cpus",
         "once_cell",
+        "parking_lot",
+        "process",
         "rt",
-        "socket2",
+        "rt-multi-thread",
+        "signal",
+        "signal-hook-registry",
         "sync",
         "time",
         "tokio-macros",
@@ -127,22 +149,33 @@ rust_library(
         "crate-name=tokio",
         "manual",
     ],
-    version = "1.20.1",
+    version = "1.21.0",
     # buildifier: leave-alone
     deps = [
         ":tokio_build_script",
         "@raze__bytes__1_2_1//:bytes",
         "@raze__memchr__2_5_0//:memchr",
         "@raze__mio__0_8_4//:mio",
+        "@raze__num_cpus__1_13_1//:num_cpus",
         "@raze__once_cell__1_13_1//:once_cell",
+        "@raze__parking_lot__0_12_1//:parking_lot",
         "@raze__pin_project_lite__0_2_9//:pin_project_lite",
-        "@raze__socket2__0_4_6//:socket2",
     ] + selects.with_or({
+        (
+            "@rules_rust//rust/platform:x86_64-apple-darwin",
+            "@rules_rust//rust/platform:x86_64-pc-windows-msvc",
+            "@rules_rust//rust/platform:x86_64-unknown-linux-gnu",
+        ): [
+            "@raze__socket2__0_4_6//:socket2",
+        ],
+        "//conditions:default": [],
+    }) + selects.with_or({
         (
             "@rules_rust//rust/platform:x86_64-apple-darwin",
             "@rules_rust//rust/platform:x86_64-unknown-linux-gnu",
         ): [
             "@raze__libc__0_2_132//:libc",
+            "@raze__signal_hook_registry__1_4_0//:signal_hook_registry",
         ],
         "//conditions:default": [],
     }) + selects.with_or({
@@ -249,6 +282,8 @@ rust_library(
 
 # Unsupported target "net_lookup_host" with type "test" omitted
 
+# Unsupported target "net_panic" with type "test" omitted
+
 # Unsupported target "no_rt" with type "test" omitted
 
 # Unsupported target "process_arg0" with type "test" omitted
@@ -334,6 +369,8 @@ rust_library(
 # Unsupported target "task_local" with type "test" omitted
 
 # Unsupported target "task_local_set" with type "test" omitted
+
+# Unsupported target "task_panic" with type "test" omitted
 
 # Unsupported target "tcp_accept" with type "test" omitted
 

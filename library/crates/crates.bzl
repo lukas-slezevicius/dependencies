@@ -971,12 +971,30 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
+        name = "raze__parking_lot__0_12_1",
+        url = "https://crates.io/api/v1/crates/parking_lot/0.12.1/download",
+        type = "tar.gz",
+        strip_prefix = "parking_lot-0.12.1",
+        build_file = Label("//library/crates/remote:BUILD.parking_lot-0.12.1.bazel"),
+    )
+
+    maybe(
+        http_archive,
         name = "raze__parking_lot_core__0_8_5",
         url = "https://crates.io/api/v1/crates/parking_lot_core/0.8.5/download",
         type = "tar.gz",
         sha256 = "d76e8e1493bcac0d2766c42737f34458f1c8c50c0d23bcb24ea953affb273216",
         strip_prefix = "parking_lot_core-0.8.5",
         build_file = Label("//library/crates/remote:BUILD.parking_lot_core-0.8.5.bazel"),
+    )
+
+    maybe(
+        http_archive,
+        name = "raze__parking_lot_core__0_9_3",
+        url = "https://crates.io/api/v1/crates/parking_lot_core/0.9.3/download",
+        type = "tar.gz",
+        strip_prefix = "parking_lot_core-0.9.3",
+        build_file = Label("//library/crates/remote:BUILD.parking_lot_core-0.9.3.bazel"),
     )
 
     maybe(
@@ -1398,6 +1416,15 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
+        name = "raze__signal_hook_registry__1_4_0",
+        url = "https://crates.io/api/v1/crates/signal-hook-registry/1.4.0/download",
+        type = "tar.gz",
+        strip_prefix = "signal-hook-registry-1.4.0",
+        build_file = Label("//library/crates/remote:BUILD.signal-hook-registry-1.4.0.bazel"),
+    )
+
+    maybe(
+        http_archive,
         name = "raze__slab__0_4_7",
         url = "https://crates.io/api/v1/crates/slab/0.4.7/download",
         type = "tar.gz",
@@ -1498,12 +1525,11 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
-        name = "raze__tokio__1_20_1",
-        url = "https://crates.io/api/v1/crates/tokio/1.20.1/download",
+        name = "raze__tokio__1_21_0",
+        url = "https://crates.io/api/v1/crates/tokio/1.21.0/download",
         type = "tar.gz",
-        sha256 = "7a8325f63a7d4774dd041e363b2409ed1c5cbbd0f867795e661df066b2b0a581",
-        strip_prefix = "tokio-1.20.1",
-        build_file = Label("//library/crates/remote:BUILD.tokio-1.20.1.bazel"),
+        strip_prefix = "tokio-1.21.0",
+        build_file = Label("//library/crates/remote:BUILD.tokio-1.21.0.bazel"),
     )
 
     maybe(

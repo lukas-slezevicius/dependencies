@@ -32,8 +32,11 @@ licenses([
 # Generated Targets
 
 rust_library(
-    name = "tokio_io_timeout",
+    name = "parking_lot",
     srcs = glob(["**/*.rs"]),
+    crate_features = [
+        "default",
+    ],
     crate_root = "src/lib.rs",
     data = [],
     edition = "2018",
@@ -42,13 +45,15 @@ rust_library(
     ],
     tags = [
         "cargo-raze",
-        "crate-name=tokio-io-timeout",
+        "crate-name=parking_lot",
         "manual",
     ],
-    version = "1.2.0",
+    version = "0.12.1",
     # buildifier: leave-alone
     deps = [
-        "@raze__pin_project_lite__0_2_9//:pin_project_lite",
-        "@raze__tokio__1_21_0//:tokio",
+        "@raze__lock_api__0_4_8//:lock_api",
+        "@raze__parking_lot_core__0_9_3//:parking_lot_core",
     ],
 )
+
+# Unsupported target "issue_203" with type "test" omitted
