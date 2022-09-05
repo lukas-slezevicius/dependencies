@@ -353,6 +353,15 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
+        name = "raze__form_urlencoded__1_0_1",
+        url = "https://crates.io/api/v1/crates/form_urlencoded/1.0.1/download",
+        type = "tar.gz",
+        strip_prefix = "form_urlencoded-1.0.1",
+        build_file = Label("//library/crates/remote:BUILD.form_urlencoded-1.0.1.bazel"),
+    )
+
+    maybe(
+        http_archive,
         name = "raze__fuchsia_cprng__0_1_1",
         url = "https://crates.io/api/v1/crates/fuchsia-cprng/0.1.1/download",
         type = "tar.gz",
@@ -799,6 +808,15 @@ def raze_fetch_remote_crates():
         sha256 = "edb09057c7b58b7d27498b528eaee9a1e661b2974a733fcabbbc3350360bc8bd",
         strip_prefix = "log-ndc-0.2.0",
         build_file = Label("//library/crates/remote:BUILD.log-ndc-0.2.0.bazel"),
+    )
+
+    maybe(
+        http_archive,
+        name = "raze__matches__0_1_9",
+        url = "https://crates.io/api/v1/crates/matches/0.1.9/download",
+        type = "tar.gz",
+        strip_prefix = "matches-0.1.9",
+        build_file = Label("//library/crates/remote:BUILD.matches-0.1.9.bazel"),
     )
 
     maybe(
@@ -1313,6 +1331,15 @@ def raze_fetch_remote_crates():
 
     maybe(
         http_archive,
+        name = "raze__ryu__1_0_11",
+        url = "https://crates.io/api/v1/crates/ryu/1.0.11/download",
+        type = "tar.gz",
+        strip_prefix = "ryu-1.0.11",
+        build_file = Label("//library/crates/remote:BUILD.ryu-1.0.11.bazel"),
+    )
+
+    maybe(
+        http_archive,
         name = "raze__safemem__0_3_3",
         url = "https://crates.io/api/v1/crates/safemem/0.3.3/download",
         type = "tar.gz",
@@ -1339,6 +1366,24 @@ def raze_fetch_remote_crates():
         sha256 = "0f747710de3dcd43b88c9168773254e809d8ddbdf9653b84e2554ab219f17860",
         strip_prefix = "serde-1.0.144",
         build_file = Label("//library/crates/remote:BUILD.serde-1.0.144.bazel"),
+    )
+
+    maybe(
+        http_archive,
+        name = "raze__serde_json__1_0_85",
+        url = "https://crates.io/api/v1/crates/serde_json/1.0.85/download",
+        type = "tar.gz",
+        strip_prefix = "serde_json-1.0.85",
+        build_file = Label("//library/crates/remote:BUILD.serde_json-1.0.85.bazel"),
+    )
+
+    maybe(
+        http_archive,
+        name = "raze__serde_urlencoded__0_7_1",
+        url = "https://crates.io/api/v1/crates/serde_urlencoded/0.7.1/download",
+        type = "tar.gz",
+        strip_prefix = "serde_urlencoded-0.7.1",
+        build_file = Label("//library/crates/remote:BUILD.serde_urlencoded-0.7.1.bazel"),
     )
 
     maybe(
